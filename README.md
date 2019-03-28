@@ -1,2 +1,2 @@
 # A simple calculator using HTML,CSS & Javascript
-Found a few bug. Will update later.
+Found a few bugs. Will update later.
