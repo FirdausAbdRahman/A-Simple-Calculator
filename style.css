@@ -6,13 +6,14 @@ body{
 #calculator{
   background: white;
   width: 320px;
-  height: 540px;
+  height: 570px;
   margin: 0 auto;
   top: 40px;
-  position: relative;
+  position:relative;
   border-radius: 25px;
   border: outset;
 }
+
 
 #display{
 height: 120px;
@@ -43,6 +44,7 @@ border-radius: 25px;
 #keyboard{
   height: 400px;
 }
+
 
 .operator, .number{
   width: 50px;

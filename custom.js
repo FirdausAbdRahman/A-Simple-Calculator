@@ -1,3 +1,6 @@
+var audio = new Audio("calculator-sound.mp3");
+audio.oncanplaythrough = function(){}
+
 function getHistory(){
   return document.getElementById("history-value").innerText;
 }
