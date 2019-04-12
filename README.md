@@ -9,3 +9,6 @@ Update:
 
 Aim: 
 simple calculator => scientific calculator
+
+Credit: 
+1. Code Spot: https://www.youtube.com/watch?v=CI2GwL--ll8&t=666s
