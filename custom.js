@@ -1,8 +1,9 @@
 //Sorry. There will be so much comments here as I'm still learning.
 
-var audio = new Audio("calculator-sound.mp3");
+let audio = new Audio("calculator-sound.mp3");
 // can be played all the way through, without stopping
 audio.oncanplaythrough = function(){}
+
 
 function getHistory(){
   //get the text content from id "history-value"
@@ -34,8 +35,8 @@ function getFormattedNumber(num){
     return "";
   }
 
-  var n = Number(num);
-  var value = n.toLocaleString("en");
+  let n = Number(num);
+  let value = n.toLocaleString("en");
   //convert the number into string and thus, comma separated value.
   return value;
 }
@@ -45,8 +46,8 @@ function reverseNumberFormat(num){
   return Number(num.replace(/,/g,''));
 }
 
-var operator = document.getElementsByClassName("operator");
-for(var i = 0;i<operator.length; i++){
+let operator = document.getElementsByClassName("operator");
+for(let i = 0;i<operator.length; i++){
   operator[i].addEventListener('click', function(){
     if(this.id=="clear"){
       // if clicked 'C', the numbers on history & output will be cleared
@@ -55,7 +56,7 @@ for(var i = 0;i<operator.length; i++){
     }
     if(this.id =="backspace"){
       //if clicked 'CE'
-      var output=reverseNumberFormat(getOutput()).toString();
+      let output=reverseNumberFormat(getOutput()).toString();
       if(output){ //if output has a value, the length will be reduced by 1
         output = output.substr(0,output.length-1);
         printOutput(output);
@@ -63,8 +64,8 @@ for(var i = 0;i<operator.length; i++){
     }
 
     else {
-      var output=getOutput();
-      var history=getHistory();
+      let output=getOutput();
+      let history=getHistory();
       if(output=="" && history!=""){
         if(isNaN(history[history.length-1])){
           history=history.substr(0, history.length-1);
@@ -75,7 +76,7 @@ for(var i = 0;i<operator.length; i++){
         output:reverseNumberFormat(output);
         history=history + output;
         if(this.id =="="){
-          var result= eval(history);
+          let result= eval(history);
           //evaluate or execute the argument
           printOutput(result);
           printHistory("");
@@ -90,10 +91,10 @@ for(var i = 0;i<operator.length; i++){
   })
 }
 
-var number = document.getElementsByClassName("number");
-for(var i = 0;i<number.length; i++){
+let number = document.getElementsByClassName("number");
+for(let i = 0;i<number.length; i++){
   number[i].addEventListener('click', function(){
-  var output = reverseNumberFormat(getOutput());
+  let output = reverseNumberFormat(getOutput());
     if(output!=NaN){ //if output is a number, it will be concatenated to the previous output clicked.
       output=output + this.id;
       printOutput(output);
