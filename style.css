@@ -62,7 +62,7 @@ border-radius: 25px;
 }
 
 .operator:active, .number:active{
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .operator:focus, .number:focus{

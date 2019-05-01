@@ -54,7 +54,7 @@ for(let i = 0;i<operator.length; i++){
       printHistory("");
       printOutput("");
     }
-    if(this.id =="backspace"){
+    else if(this.id =="backspace"){
       //if clicked 'CE'
       let output=reverseNumberFormat(getOutput()).toString();
       if(output){ //if output has a value, the length will be reduced by 1
@@ -62,7 +62,6 @@ for(let i = 0;i<operator.length; i++){
         printOutput(output);
       }
     }
-
     else {
       let output=getOutput();
       let history=getHistory();
@@ -80,6 +79,7 @@ for(let i = 0;i<operator.length; i++){
           //evaluate or execute the argument
           printOutput(result);
           printHistory("");
+
         }
         else{ //for other operators, added to history & output is set to empty
           history = history + this.id;
