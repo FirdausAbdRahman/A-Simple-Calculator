@@ -1,9 +1,7 @@
 //Sorry. There will be so much comments here as I'm still learning.
 
 let audio = new Audio("calculator-sound.mp3");
-// can be played all the way through, without stopping
-audio.oncanplaythrough = function(){}
-
+audio.play();
 
 function getHistory(){
   //get the text content from id "history-value"
