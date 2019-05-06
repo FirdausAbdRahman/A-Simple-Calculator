@@ -1,24 +1,24 @@
 //Sorry. There will be so much comments here as I'm still learning.
 
 let audio = new Audio("calculator-sound.mp3");
-audio.play();
+audio.oncanplaythrough = function(){};
 
-function getHistory(){
+const getHistory = () =>{
   //get the text content from id "history-value"
   return document.getElementById("history-value").innerText;
 }
 
-function printHistory(num){
+const printHistory = (num) => {
   //print the history value
   document.getElementById("history-value").innerText=num;
 }
 
-function getOutput(){
+const getOutput = () =>{
   //get the text content from id "history-output"
   return document.getElementById("output-value").innerText;
 }
 
-function printOutput(num){
+const printOutput = (num) =>{
   //print the output value
   if (num =="-"){
     document.getElementById("output-value").innerText=num;
@@ -27,7 +27,7 @@ function printOutput(num){
   }
 }
 
-function getFormattedNumber(num){
+const getFormattedNumber = (num) => {
   if(num==""){
     //if the value is empty, set the value to empty.
     return "";
@@ -39,7 +39,7 @@ function getFormattedNumber(num){
   return value;
 }
 
-function reverseNumberFormat(num){
+const reverseNumberFormat = (num) =>{
   //replace comma with an empty space (, => '')
   return Number(num.replace(/,/g,''));
 }
@@ -73,16 +73,19 @@ for(let i = 0;i<operator.length; i++){
         output:reverseNumberFormat(output);
         history=history + output;
         if(this.id =="="){
-          let result= eval(history);
           //evaluate or execute the argument
-          printOutput(result);
-          printHistory("");
-
-        }
+          let result= eval(history);
+            printOutput(result);
+            printHistory("");
+          }
         else{ //for other operators, added to history & output is set to empty
           history = history + this.id;
           printHistory(history);
           printOutput("");
+          if(this.id =="%"){
+            let percentage = output;
+            printOutput(percentage/100);
+          }
         }
       }
     }
